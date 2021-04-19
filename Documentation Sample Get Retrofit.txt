@@ -1,0 +1,18 @@
+To use Get retrofit in recyclerview
+1. First add dependencies for view model and retrofit
+2. Next make file model, interface, intercept, and object
+3. After making file package for network next is making repository for implement object file
+4. Next make package for view model, in file view model implement MutableLiveData and repository
+5. After making view model, next is make model view factory
+6. Next make layout and adapter for recycler view, in adapter you must add emptyList and
+    function then implement it to Kotlin also add adapter in view model and implement like this, 
+                if (it.isSuccessful)
+            {
+                it.body().let { myAdapter.setData(it!!) }
+		...
+            }
+    and in adapter is like this:
+        recycler_retrofit.adapter = myAdapter
+
+Note: make sure you parameter in interface, repository, Kotlin, and ViewModel must same in JSON
+Note: to use recycler view JSON data must be array
